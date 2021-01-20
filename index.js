@@ -7,12 +7,12 @@ logic(user_response);
 
 function urlEncode(url)
 {
-console.log(encodeURIComponent(url));
+return encodeURIComponent(url);
 }
 
 function urlDecode(url)
 {
-console.log(decodeURIComponent(url));
+return decodeURIComponent(url);
 }
 
 function logic(user_response)
@@ -20,13 +20,13 @@ function logic(user_response)
 if(user_response==='1')
 {
   const url = readLineSync.question('Please enter the url to be encoded\n');
-  urlEncode(url);
+  console.log(urlEncode(url));
 }
 
 else if(user_response==='2')
 {
   const url = readLineSync.question('Please enter the url to be decoded\n');
-  urlDecode(url);
+ console.log(urlDecode(url));
 }
 else
 {
