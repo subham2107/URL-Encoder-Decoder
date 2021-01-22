@@ -1,37 +1,35 @@
 const readLineSync = require('readline-sync');
 
-const user_response = readLineSync.question('Welcome to URL Encoder/Decoder. Which utility function would you like to use?\n1. urlEncode\n2. urlDecode\n');
+const userResponse = parseInt(readLineSync.question('Welcome to URL Encoder/Decoder. Which utility function would you like to use?\n1. urlEncode\n2. urlDecode\n'));
 
-console.log(`You selected ${user_response}`);
-logic(user_response);
+console.log(`You selected ${userResponse}`);
 
 function urlEncode(url)
 {
-return encodeURIComponent(url);
+   //("https://workat.tech/ide") → https%3A%2F%2Fworkat.tech%2Fide
+   return encodeURIComponent(url);
 }
 
 function urlDecode(url)
 {
-return decodeURIComponent(url);
+   return decodeURIComponent(url);
 }
 
-function logic(user_response)
+switch(userResponse)
 {
-if(user_response==='1')
-{
-  const url = readLineSync.question('Please enter the url to be encoded\n');
-  console.log(urlEncode(url));
-}
+   case 1:
+   const url1 = readLineSync.question('Please enter the url to be encoded\n');
+   console.log(urlEncode(url1));
+   break;
+   
+   case 2:
+   const url2 = readLineSync.question('Please enter the url to be decoded\n');
+   console.log(urlDecode(url2));
+   break;
 
-else if(user_response==='2')
-{
-  const url = readLineSync.question('Please enter the url to be decoded\n');
- console.log(urlDecode(url));
-}
-else
-{
-  console.log('Invalid URL');
-}
+   default:
+   console.log('Invalid option');
+   break;
 }
 
 
