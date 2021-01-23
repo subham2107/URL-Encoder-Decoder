@@ -18,18 +18,18 @@ function urlDecode(url)
 switch(userResponse)
 {
    case 1:
-   const url1 = readLineSync.question('Please enter the url to be encoded\n');
-   console.log(urlEncode(url1));
-   break;
+       const url1 = readLineSync.question('Please enter the url to be encoded\n');
+       console.log(urlEncode(url1));
+       break;
    
    case 2:
-   const url2 = readLineSync.question('Please enter the url to be decoded\n');
-   console.log(urlDecode(url2));
-   break;
+       const url2 = readLineSync.question('Please enter the url to be decoded\n');
+       console.log(urlDecode(url2));
+       break;
 
    default:
-   console.log('Invalid option');
-   break;
+       console.log('Invalid option');
+       break;
 }
 
 
